@@ -28,7 +28,7 @@ public class BidingAdapter {
 //        return bindableBoolean.get();
 //    }
 
-    @BindingAdapter("app:visible")
+    @BindingAdapter({"app:visible"})
     public static void setFadeVisible(final View view, ObservableBoolean visible) {
         view.animate().cancel();
 
