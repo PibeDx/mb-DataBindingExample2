@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.databinding.BindingAdapter;
 import android.databinding.ObservableBoolean;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -86,12 +85,10 @@ public class BidingAdapter {
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     super.onTextChanged(s, start, before, count);
                     text.set(s.toString());
-                    Log.d("TAG", s.toString());
-                    Log.d("TAGs",""+ text.get());
-
                 }
             });
         }
+
         String newValue = text.get();
         if (!editText.getText().toString().equals(newValue)) {
             editText.setText(newValue);

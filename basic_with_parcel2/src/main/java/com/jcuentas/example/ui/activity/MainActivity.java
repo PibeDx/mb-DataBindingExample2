@@ -19,18 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         ActivityMenuBinding activityMenuBinding = DataBindingUtil.setContentView(this, R.layout.activity_menu);
-        //Solucion cuando se cambia de orientacion del dispositivo, la informacion permanece
 //        if (savedInstanceState==null){
             usuario = new Usuarios();
-
-
-
-//        ObservableField<String> asd =new ObservableField<>();
-//        asd.set("asd");
-//        usuario.nombre1.set(asd);
-
-
-
 //        }else{
 //            usuario = Parcels.unwrap(savedInstanceState.getParcelable(KEY_USUARIO));
 //        }
@@ -58,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-//            usuario.setVisible(!usuario.isVisible());
-//            usuario.visible.set(!usuario.visible.get());
-//            usuario.setNombre("José");
             Log.d("MainActivity", ""+usuario.nombre.get());
             return true;
         }
