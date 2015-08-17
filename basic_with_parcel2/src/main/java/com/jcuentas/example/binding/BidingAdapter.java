@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.databinding.BindingAdapter;
 import android.databinding.ObservableBoolean;
-import android.databinding.ObservableField;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -53,15 +52,39 @@ public class BidingAdapter {
     }
 
 
+//    @BindingAdapter("app:bindings")
+//    public static void bindEditText(EditText editText, final ObservableField text){
+//        if (editText.getTag(R.id.binded)==null){
+//            editText.setTag(R.id.binded,true);
+//            editText.addTextChangedListener( new TextWatcherAdapter(){
+//                @Override
+//                public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                    super.onTextChanged(s, start, before, count);
+////                    text.set(s.toString());
+//                    text.set(s.toString());
+//                    Log.d("TAG", s.toString());
+//                    Log.d("TAGs",""+ text.get());
+//
+//                }
+//            });
+//        }
+////        String newValue = ((ObservableField<String>)text).get();
+//        String newValue = String.valueOf(text.get());
+////        String newValue = text;
+//        if (!editText.getText().toString().equals(newValue)) {
+//            editText.setText(newValue);
+//        }
+//    }
+
+
     @BindingAdapter("app:bindings")
-    public static void bindEditText(EditText editText, final ObservableField text){
+    public static void bindEditText(EditText editText, final ObservableString text){
         if (editText.getTag(R.id.binded)==null){
             editText.setTag(R.id.binded,true);
             editText.addTextChangedListener( new TextWatcherAdapter(){
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     super.onTextChanged(s, start, before, count);
-//                    text.set(s.toString());
                     text.set(s.toString());
                     Log.d("TAG", s.toString());
                     Log.d("TAGs",""+ text.get());
@@ -69,9 +92,7 @@ public class BidingAdapter {
                 }
             });
         }
-//        String newValue = ((ObservableField<String>)text).get();
-        String newValue = String.valueOf(text.get());
-//        String newValue = text;
+        String newValue = text.get();
         if (!editText.getText().toString().equals(newValue)) {
             editText.setText(newValue);
         }

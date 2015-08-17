@@ -1,7 +1,6 @@
 package com.jcuentas.example.ui.activity;
 
 import android.databinding.DataBindingUtil;
-import android.databinding.ObservableField;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -23,9 +22,15 @@ public class MainActivity extends AppCompatActivity {
         //Solucion cuando se cambia de orientacion del dispositivo, la informacion permanece
 //        if (savedInstanceState==null){
             usuario = new Usuarios();
-        ObservableField<String> asd =new ObservableField<>();
-        asd.set("asd");
-        usuario.nombre1.set(asd);
+
+
+
+//        ObservableField<String> asd =new ObservableField<>();
+//        asd.set("asd");
+//        usuario.nombre1.set(asd);
+
+
+
 //        }else{
 //            usuario = Parcels.unwrap(savedInstanceState.getParcelable(KEY_USUARIO));
 //        }
@@ -56,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 //            usuario.setVisible(!usuario.isVisible());
 //            usuario.visible.set(!usuario.visible.get());
 //            usuario.setNombre("José");
-            Log.d("MainActivity", ""+String.valueOf(((ObservableField<String>)usuario.nombre1).get()));
+            Log.d("MainActivity", ""+usuario.nombre.get());
             return true;
         }
 

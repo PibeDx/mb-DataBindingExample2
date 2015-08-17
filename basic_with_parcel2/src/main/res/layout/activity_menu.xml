@@ -28,7 +28,7 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:bindings="@{users.nombre1}"/>
+            app:bindings="@{users.nombre}"/>
         <!--android:text="@{user.nombre1}"-->
         <!--app:binding="@{user.nombre1"-->
 
