@@ -29,6 +29,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:bindings="@{users.nombre}"/>
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Switch"
+            android:id="@+id/switch1"
+            app:binding="@{users.mBoolean}"/>
         <!--android:text="@{user.nombre1}"-->
         <!--app:binding="@{user.nombre1"-->
 

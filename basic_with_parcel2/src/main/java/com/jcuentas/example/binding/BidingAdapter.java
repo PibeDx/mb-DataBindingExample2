@@ -4,11 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.databinding.BindingAdapter;
 import android.databinding.ObservableBoolean;
+import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 
 import com.jcuentas.example.R;
-import com.jcuentas.example.util.TextWatcherAdapter;
 
 /**
  * Created by Jose Cuentas Turpo on 13/08/2015 - 02:37 PM.
@@ -92,6 +94,20 @@ public class BidingAdapter {
         String newValue = text.get();
         if (!editText.getText().toString().equals(newValue)) {
             editText.setText(newValue);
+        }
+    }
+
+    @BindingAdapter({"app:binding"})
+    public static void bindSwitch(Switch view, final BindableBoolean check) {
+        if (view.getTag(R.id.binded) == null) {
+            view.setTag(R.id.binded, true);
+            view.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    Log.d("TAG", ""+isChecked);
+//                    check.set(isChecked);
+                }
+            });
         }
     }
 }

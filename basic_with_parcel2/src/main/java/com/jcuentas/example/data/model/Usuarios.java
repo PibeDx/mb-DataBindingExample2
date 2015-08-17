@@ -1,5 +1,6 @@
 package com.jcuentas.example.data.model;
 
+import com.jcuentas.example.binding.BindableBoolean;
 import com.jcuentas.example.binding.ObservableString;
 
 /**
@@ -8,4 +9,8 @@ import com.jcuentas.example.binding.ObservableString;
  */
 public class Usuarios {
     public ObservableString nombre = new ObservableString();
+//    public ObservableBoolean ismagic = new ObservableBoolean();
+    public BindableBoolean mBoolean = new BindableBoolean();
+
+
 }
